@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Country.css'
+import '../Countries/Countries'
 
 const Country = ({ country }) => {
     const { name, flags, area, cca3} = country;
@@ -13,8 +14,8 @@ const Country = ({ country }) => {
     }
     return (
         <>
-            <div className="country">
-                <h2>{name?.common}</h2>
+            <div className={`country ${visited ? 'visited' : 'non-visited'}`}>
+                <h2 style={{color: visited ? 'white' : 'purple'}}>{name?.common}</h2>
                 <img className='country-img' src={flags?.png} alt="" />
                 <p>Official Name : {name.official}</p>
                 <p>Area : {area}</p>
